@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: restapi
 spec:
-  replicas: 3
+  replicas: 1
   selector: 
     matchLabels:
       component:  restapi
@@ -20,7 +20,7 @@ spec:
             - containerPort: 80
           env:
           - name: "REDIS_SERVER"
-            value: "http://redis:6379"
+            value: "http://redis"
 
 
         

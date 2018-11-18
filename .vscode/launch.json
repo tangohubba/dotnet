@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/mvc/bin/Debug/netcoreapp2.1/mvc.dll",
+            "program": "${workspaceFolder}/restapi/bin/Debug/netcoreapp2.1/restapi.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/mvc",
+            "cwd": "${workspaceFolder}/restapi",
             "stopAtEntry": false,
             "internalConsoleOptions": "openOnSessionStart",
             "launchBrowser": {
@@ -30,7 +30,8 @@
                 }
             },
             "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "REDIS_SERVER": "http://redis"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"

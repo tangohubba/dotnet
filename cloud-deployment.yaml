@@ -22,7 +22,9 @@ spec:
           - name: "ASPNETCORE_ENVIRONMENT"
             value: "Development"
           - name: "API_URL"
-            value: "http://restapi.default.svc.cluster.local:3051/api/values"
+            value: "http://restapi:3051/api/values"
+          - name: "REDIS_API_URL"
+            value:  "http://restapi:3051/api/values/12"
             
 
 ---

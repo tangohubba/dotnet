@@ -18,4 +18,9 @@ spec:
           image: dockeruser1212/restapi
           ports:
             - containerPort: 80
-            
+          env:
+          - name: "REDIS_SERVER"
+            value: "http://redis:6379"
+
+
+        

@@ -26,19 +26,37 @@ namespace mvc.Controllers
         public IActionResult About()
         {
 
-            var apiRequest = GetDataFromUrl(Environment.GetEnvironmentVariable("API_URL"));
+            string redisAPIurl = Environment.GetEnvironmentVariable("REDIS_API_URL");
+            var redisApiRequest = GetDataFromUrl(redisAPIurl);
+            redisApiRequest.Wait();
+
+
+            string url = Environment.GetEnvironmentVariable("API_URL");
+            var apiRequest = GetDataFromUrl(url);
             apiRequest.Wait();
 
-            ViewData["Message"] = "Data from API " + string.Join(",",apiRequest.Result) + " obtained from " + Environment.GetEnvironmentVariable("API_URL");
+            ViewData["Message"] = "Data from API " + string.Join(",",apiRequest.Result) 
+                                + " obtained from " + url 
+                                + " cached data " + redisApiRequest.Result;
+
             return View();
+        }
+
+        public async Task<String> GetDataFromRedisUrl(string url)
+        {
+            var cachedData = await url
+                        .WithHeader("Accept", "application/json")               
+                            .GetAsync()                
+                            .ReceiveJson<String>();
+            return cachedData;
         }
 
         public async Task<List<String>> GetDataFromUrl(string url)
         {
             var list = await url
-            .WithHeader("Accept", "application/json")               
-                .GetAsync()                
-                .ReceiveJson<List<String>>();
+                        .WithHeader("Accept", "application/json")               
+                            .GetAsync()                
+                            .ReceiveJson<List<String>>();
             return list;
         }
 

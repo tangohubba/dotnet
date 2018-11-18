@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: restapi
+spec:
+  replicas: 3
+  selector: 
+    matchLabels:
+      component:  restapi
+  template:
+    metadata:
+      labels:
+        component:  restapi
+        visualize:  "true"
+    spec:
+      containers:
+        - name: restapi
+          image: dockeruser1212/restapi
+          ports:
+            - containerPort: 80
+            

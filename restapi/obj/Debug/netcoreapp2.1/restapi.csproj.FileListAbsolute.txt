@@ -1,0 +1,14 @@
+C:\docker\projects\dotnet\restapi\bin\Debug\netcoreapp2.1\restapi.deps.json
+C:\docker\projects\dotnet\restapi\bin\Debug\netcoreapp2.1\restapi.runtimeconfig.json
+C:\docker\projects\dotnet\restapi\bin\Debug\netcoreapp2.1\restapi.runtimeconfig.dev.json
+C:\docker\projects\dotnet\restapi\bin\Debug\netcoreapp2.1\restapi.dll
+C:\docker\projects\dotnet\restapi\bin\Debug\netcoreapp2.1\restapi.pdb
+C:\docker\projects\dotnet\restapi\obj\Debug\netcoreapp2.1\restapi.csprojAssemblyReference.cache
+C:\docker\projects\dotnet\restapi\obj\Debug\netcoreapp2.1\restapi.csproj.CoreCompileInputs.cache
+C:\docker\projects\dotnet\restapi\obj\Debug\netcoreapp2.1\restapi.RazorAssemblyInfo.cache
+C:\docker\projects\dotnet\restapi\obj\Debug\netcoreapp2.1\restapi.RazorAssemblyInfo.cs
+C:\docker\projects\dotnet\restapi\obj\Debug\netcoreapp2.1\restapi.AssemblyInfoInputs.cache
+C:\docker\projects\dotnet\restapi\obj\Debug\netcoreapp2.1\restapi.AssemblyInfo.cs
+C:\docker\projects\dotnet\restapi\obj\Debug\netcoreapp2.1\restapi.RazorTargetAssemblyInfo.cache
+C:\docker\projects\dotnet\restapi\obj\Debug\netcoreapp2.1\restapi.dll
+C:\docker\projects\dotnet\restapi\obj\Debug\netcoreapp2.1\restapi.pdb

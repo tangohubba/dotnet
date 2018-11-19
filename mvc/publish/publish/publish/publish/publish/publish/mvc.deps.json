@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "8d19439ef22c432fe18f0eac697c8789fe30c00a"
+    "signature": "fe6e39997e49bfbbe1f947170d08cf49f9f25c0f"
   },
   "compilationOptions": {
     "defines": [
@@ -22,16 +22,46 @@
   },
   "targets": {
     ".NETCoreApp,Version=v2.1": {
-      "restapi/1.0.0": {
+      "mvc/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.App": "2.1.1",
-          "Microsoft.NETCore.App": "2.1.0"
+          "Microsoft.NETCore.App": "2.1.0",
+          "Flurl": "2.8.0",
+          "Flurl.Http": "2.4.0",
+          "Newtonsoft.Json": "11.0.2"
         },
         "runtime": {
-          "restapi.dll": {}
+          "mvc.dll": {}
         },
         "compile": {
-          "restapi.dll": {}
+          "mvc.dll": {}
+        }
+      },
+      "Flurl/2.8.0": {
+        "runtime": {
+          "lib/netstandard2.0/Flurl.dll": {
+            "assemblyVersion": "2.8.0.0",
+            "fileVersion": "2.8.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Flurl.dll": {}
+        }
+      },
+      "Flurl.Http/2.4.0": {
+        "dependencies": {
+          "Flurl": "2.8.0",
+          "Newtonsoft.Json": "11.0.2",
+          "System.Text.Encoding.CodePages": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Flurl.Http.dll": {
+            "assemblyVersion": "2.4.0.0",
+            "fileVersion": "2.4.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Flurl.Http.dll": {}
         }
       },
       "Microsoft.NETCore.App/2.1.0": {
@@ -2967,6 +2997,9 @@
           "Microsoft.NETCore.Platforms": "2.1.0",
           "System.Runtime.CompilerServices.Unsafe": "4.5.1"
         },
+        "compile": {
+          "ref/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
+        },
         "compileOnly": true
       },
       "System.Text.Encoding.Extensions/4.3.0": {
@@ -3146,10 +3179,24 @@
     }
   },
   "libraries": {
-    "restapi/1.0.0": {
+    "mvc/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Flurl/2.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-P79Pqoi+GqVxUcexU9OAI0e5J6u/eRfscRxHqnVdDD7cNhi/OMWgJvdsn56tMlKmOik0P/W7/ZwRgU20up718w==",
+      "path": "flurl/2.8.0",
+      "hashPath": "flurl.2.8.0.nupkg.sha512"
+    },
+    "Flurl.Http/2.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-alaK3NlWrSgIqjQt7A5grfxOVXLoRo2Y/3uQWI+3p/5K3w4VlZPqal49wLU0Ln2vfNLBFmt3hS/Knye3CRmFqQ==",
+      "path": "flurl.http/2.4.0",
+      "hashPath": "flurl.http.2.4.0.nupkg.sha512"
     },
     "Microsoft.NETCore.App/2.1.0": {
       "type": "package",

@@ -17,10 +17,23 @@ spec:
         - name: restapi
           image: dockeruser1212/restapi
           ports:
-            - containerPort: 80
+          - containerPort: 80
           env:
-          - name: "REDIS_SERVER"
-            value: "http://redis"
+          - name: "AnyEnvVar"
+            value: "AndValue"
 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: restapi
+spec:
+  type: NodePort
+  selector:
+    component:  restapi
+  ports:
+    - port:  3051
+      nodePort: 30801
+      targetPort: 80
 
         

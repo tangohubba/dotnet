@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using StackExchange.Redis;
 
 namespace restapi.Controllers
 {
-
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
@@ -16,42 +14,31 @@ namespace restapi.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "value1", "value2", DateTime.Now.ToLongTimeString() };
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<CacheData> Get(string id)
+        public ActionResult<string> Get(int id)
         {
-            CacheData cd = new CacheData();
-            ConnectionMultiplexer redis = ConnectionMultiplexer.Connect(Environment.GetEnvironmentVariable("REDIS_SERVER"));
-            IDatabase db = redis.GetDatabase();
-            db.StringSet("12","test");
-
-            cd.Value = db.StringGet(id);
-            cd.Name = "12";
-            return cd;
+            return "value";
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] CacheData data)
+        public void Post([FromBody] string value)
         {
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(string id, [FromBody] string data)
+        public void Put(int id, [FromBody] string value)
         {
-            ConnectionMultiplexer redis = ConnectionMultiplexer.Connect(Environment.GetEnvironmentVariable("REDIS_SERVER"));
-            IDatabase db = redis.GetDatabase();
-            db.StringSet(id,data);
-
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(string id)
+        public void Delete(int id)
         {
         }
     }

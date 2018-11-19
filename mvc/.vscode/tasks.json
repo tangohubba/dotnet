@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/restapi.csproj"
+                "${workspaceFolder}/mvc.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

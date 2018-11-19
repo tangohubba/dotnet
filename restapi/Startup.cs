@@ -40,7 +40,6 @@ namespace restapi
                 app.UseHsts();
             }
 
-            //app.UseHttpsRedirection();
             app.UseMvc();
         }
     }

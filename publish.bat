@@ -1,7 +1,5 @@
 cd  mvc
 dotnet publish -o publish
 
-cd ..
-cd ..
-cd restapi
+cd ..\restapi
 dotnet publish -o publish

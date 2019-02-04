@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: client
+  name: web
 spec:
   replicas: 1
   selector: 
@@ -14,7 +14,7 @@ spec:
         visualize:  "true"
     spec:
       containers:
-        - name: client
+        - name: web
           image: dockeruser1212/mvc
           ports:
           - containerPort: 80
@@ -24,15 +24,4 @@ spec:
           - name: "API_URL"
             value: "http://restapi:3051/api/values"
             
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: client
-spec:
-  type: LoadBalancer
-  selector:
-    component:  web
-  ports:
-    - port:  80
-      targetPort: 80
+

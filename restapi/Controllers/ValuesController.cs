@@ -15,7 +15,7 @@ namespace restapi.Controllers
         public ActionResult<IEnumerable<string>> Get()
         {
             //copy this line
-            return new string[] { "Response from API", DateTime.Now.ToLongTimeString() };
+            return new string[] { "Response from API ", DateTime.Now.ToLongTimeString() };
         }
 
         // GET api/values/5

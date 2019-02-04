@@ -25,17 +25,16 @@ namespace mvc.Controllers
 
         public IActionResult About()
         {
-
+            //copy next 4 lines
             string url = Environment.GetEnvironmentVariable("API_URL");
             var apiRequest = GetDataFromUrl(url);
             apiRequest.Wait();
-
             ViewData["Message"] = "Data from API " + string.Join(",",apiRequest.Result) 
                                 + " obtained from " + url;
 
             return View();
         }
-
+        //copy this method
         public async Task<List<String>> GetDataFromUrl(string url)
         {
             var list = await url

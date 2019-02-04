@@ -11,16 +11,12 @@ spec:
     metadata:
       labels:
         component:  restapi
-        visualize:  "true"
     spec:
       containers:
         - name: restapi
           image: dockeruser1212/restapi
           ports:
           - containerPort: 80
-          env:
-          - name: "AnyEnvVar"
-            value: "AndValue"
 
 ---
 apiVersion: v1
